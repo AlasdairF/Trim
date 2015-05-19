@@ -21,3 +21,25 @@ func SpaceRight(word []byte) []byte {
 	}
 	return []byte{}
 }
+
+func SpacePunc(word []byte) []byte {
+	return SpacePuncRight(SpacePuncLeft(word))
+}
+
+func SpacePuncLeft(word []byte) []byte {
+	for i, b := range word {
+		if b > 47 {
+			return word[i:]
+		}
+	}
+	return []byte{}
+}
+
+func SpacePuncRight(word []byte) []byte {
+	for i:=len(word)-1; i>=0; i-- {
+		if word[i] > 47 {
+			return word[0:i+1]
+		}
+	}
+	return []byte{}
+}
