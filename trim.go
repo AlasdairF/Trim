@@ -1,7 +1,7 @@
 package trim
 
 func Space(word []byte) []byte {
-	return TrimSpaceRight(TrimSpaceLeft(word))
+	return SpaceRight(SpaceLeft(word))
 }
 
 func SpaceLeft(word []byte) []byte {
